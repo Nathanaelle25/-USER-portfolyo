@@ -1,0 +1,25 @@
+---
+// For Astro 4+ with base routing, Astro.currentLocale exists.
+const currentLocale = Astro.currentLocale || 'en';
+
+const locales = [
+  { code: 'en', label: 'EN', path: '/' },
+  { code: 'fr', label: 'FR', path: '/fr' },
+  { code: 'tr', label: 'TR', path: '/tr' },
+];
+---
+<div class="flex space-x-2">
+  {locales.map(({ code, label, path }) => (
+    <a 
+      href={path} 
+      class={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+        currentLocale === code 
+          ? 'bg-primary-500 text-white dark:bg-primary-600 shadow-sm' 
+          : 'bg-neutrals-200 text-neutrals-700 hover:bg-neutrals-300 dark:bg-neutrals-800 dark:text-neutrals-300 dark:hover:bg-neutrals-700'
+      }`}
+      aria-current={currentLocale === code ? 'page' : undefined}
+    >
+      {label}
+    </a>
+  ))}
+</div>
