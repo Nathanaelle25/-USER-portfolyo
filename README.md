@@ -1,5 +1,6 @@
 # Nathanaelle Portfolio
-
+# İsim : NATHANAELLE 
+# Numera : 24080410150
 [![CI/CD DevSecOps Pipeline](https://github.com/Nathanaelle25/-USER-portfolyo/actions/workflows/deploy.yml/badge.svg)](https://github.com/Nathanaelle25/-USER-portfolyo/actions/workflows/deploy.yml)
 
 A multi-regional, high-performance static portfolio built with Astro and Tailwind CSS.
