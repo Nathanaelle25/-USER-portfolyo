@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Wipe default colors to enforce bespoke design */
+  --color-*: initial;
+
+  /* Custom Color Palette: Slate and Amethyst */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Neutrals (Slate-like) */
+  --color-neutrals-50: #f8fafc;
+  --color-neutrals-100: #f1f5f9;
+  --color-neutrals-200: #e2e8f0;
+  --color-neutrals-300: #cbd5e1;
+  --color-neutrals-400: #94a3b8;
+  --color-neutrals-500: #64748b;
+  --color-neutrals-600: #475569;
+  --color-neutrals-700: #334155;
+  --color-neutrals-800: #1e293b;
+  --color-neutrals-900: #0f172a;
+  --color-neutrals-950: #020617;
+
+  /* Primary Accent: Amethyst (Purple-ish) */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7e22ce;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
+
+  /* Custom typography */
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Consistent Spacing Extensions if needed */
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  /* Border Radius */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* Base custom styles to support dark mode manually if needed, or we rely on tailwind classes */
+@layer base {
+  body {
+    @apply bg-neutrals-50 text-neutrals-900 font-sans transition-colors duration-300;
+  }
+  
+  /* Applying dark mode class at HTML level handles this automatically, but base overrides help */
+  .dark body {
+    @apply bg-neutrals-950 text-neutrals-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
