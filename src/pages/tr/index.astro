@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const projects = [
+  {
+    title: "Nathanaelle notlar",
+    description: "Not alma işlemi genellikle sorunsuz bulut senkronizasyonundan ve hızlı not almak için sezgisel bir arayüzden yoksundur. Bu proje, düşünceleri ve görevleri verimli bir şekilde organize etmek için gerçek zamanlı, son derece duyarlı bir platform sağlayarak günlük kayıt tutmanın sürtünmesini giderir.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Theatro",
+    description: "Hobi atölyeleri için koltuk tahsisi ve etkinlik yönetimi genellikle son derece kopuktur ve çifte rezervasyona eğilimlidir. Theatro, veri tutarlılığını garanti eden ve katılımcılar için rezervasyon sürecini basitleştiren birleştirilmiş, 3 katmanlı mimariye sahip bir rezervasyon sistemi sunarak bu sorunu çözer.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Smart Logistics Service",
+    description: "Tedarik zinciri kesintileri, doğru gecikme tahminine olan ihtiyacı vurgulamaktadır. Bu hizmet, rota optimizasyonu ve gerçek zamanlı gecikme tahminleri sunarak filo yöneticilerinin sevkiyatları proaktif olarak yeniden yönlendirmesine ve kesinti süresini en aza indirmesine olanak tanır.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  }
+];
+
+const skills = {
+  "Önyüz (Frontend)": ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Astro", "React"],
+  "Arkayüz (Backend)": ["Node.js", "Express", "ASP.NET Core"],
+  "Veritabanları": ["SQL Server", "MongoDB"],
+  "DevOps ve Araçlar": ["Git", "Docker", "REST APIs"]
+};
+---
+
+<Layout title="Nathanaelle | Portfolyo" description="Nathanaelle Kişisel Portfolyo" lang="tr">
+  <Header />
+  <main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+    
+    <!-- 1. Hero -->
+    <section id="hero" class="min-h-[65vh] flex flex-col justify-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-neutrals-900 dark:text-neutrals-50 tracking-tight">
+        Merhaba, Ben <span class="text-primary-500">NATHANAELLE</span>.
+      </h1>
+      <div class="mt-6 text-xl text-neutrals-600 dark:text-neutrals-300 max-w-2xl font-sans space-y-4">
+        <p>
+          Karmaşık teknik problemleri analiz eder ve sıfırdan zarif, yüksek performanslı çözümler tasarlarım.
+        </p>
+        <p>
+          Kullanıcı deneyimini ve ölçeklenebilir mimariyi ön planda tutan sağlam web uygulamaları oluşturma konusunda tutkuluyum.
+        </p>
+      </div>
+      <div class="mt-8 flex gap-4">
+        <a href="#projects" class="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors">
+          Çalışmalarımı İncele
+        </a>
+        <a href="#contact" class="px-6 py-3 bg-neutrals-200 dark:bg-neutrals-800 text-neutrals-900 dark:text-white rounded-lg font-semibold hover:bg-neutrals-300 dark:hover:bg-neutrals-700 transition-colors">
+          İletişime Geç
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. Projects -->
+    <section id="projects" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Öne Çıkan Projeler</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <div class="flex flex-col bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold font-heading mb-3">{p.title}</h3>
+            <p class="text-neutrals-600 dark:text-neutrals-400 flex-grow mb-6">{p.description}</p>
+            <a href={p.link} target="_blank" rel="noopener noreferrer" class="self-start px-4 py-2 bg-neutrals-100 dark:bg-neutrals-800 hover:bg-neutrals-200 dark:hover:bg-neutrals-700 text-sm font-semibold rounded-md transition-colors">
+              GitHub Deposu &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 3. Skills -->
+    <section id="skills" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Yetenekler ve Teknolojiler</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {Object.entries(skills).map(([category, items]) => (
+          <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-6">
+            <h3 class="text-lg font-bold font-heading mb-4 text-primary-600 dark:text-primary-400">{category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {items.map((skill) => (
+                <span class="px-3 py-1 bg-white dark:bg-neutrals-800 border border-neutrals-200 dark:border-neutrals-700 rounded-md text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Experience -->
+    <section id="experience" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">İş Deneyimi</h2>
+      <div class="space-y-6 border-l-2 border-primary-200 dark:border-primary-900 pl-6">
+        
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-500 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Hackathon Katılımcısı</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Nisan 2026</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Akıllı Lojistik Hizmeti (Smart Logistics Service) üzerinde çalışıldı. Sıkı teslim tarihleri altında gerçek zamanlı gecikme tahminleri ve rota optimizasyonu algoritmaları için mantık kurgulamak ve uygulamak üzere bir ekiple işbirliği yapıldı.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-400 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Bağımsız Geliştirici</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Kendi Yönettiği Projeler</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            'Theatro' ve 'Nathanaelle notlar' gibi sağlam sistemleri mimarilendirip geliştirerek full-stack iş akışlarında ustalaştı. Veritabanı modellemesinden duyarlı (responsive) önyüz tasarımına kadar tüm yönleri başarıyla yönetti.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-300 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Akademik Laboratuvar Çalışması ve Teknik Araştırma</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Bitlis Eren Üniversitesi</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Dijital mantık tasarımı, evrensel kapılar (NAND/NOR) ve derin veritabanı yönetim sistemlerinin uygulamalı araştırmasını ve uygulamasını yöneterek, bilgisayar bilimleri temellerinin titiz bir şekilde anlaşılmasını sağladı.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Education -->
+    <section id="education" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Eğitim</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold font-heading">Bitlis Eren Üniversitesi</h3>
+          <p class="text-neutrals-600 dark:text-neutrals-400 mt-1">Bilgisayar Mühendisliği</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-primary-500 font-semibold bg-primary-50 dark:bg-primary-950/50 px-4 py-2 rounded-lg">
+          Lisans Programı
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Hobbies -->
+    <section id="hobbies" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Hobiler ve İlgi Alanları</h2>
+      <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-8">
+        <ul class="space-y-4 text-neutrals-700 dark:text-neutrals-300 list-disc list-inside marker:text-primary-500">
+          <li><strong>Dil Ustalığı:</strong> Çeviri ve kültürel iletişim nüanslarını keşfederken İngilizcenin yanı sıra Fransızca ve Türkçe pratik yapmak.</li>
+          <li><strong>Stratejik Satranç:</strong> Kod yazmak dışında analitik düşünceyi, stratejik öngörüyü ve problem çözme yeteneğini geliştirmek için satranç oynamak.</li>
+          <li><strong>Bilimkurgu Okumak:</strong> Fütüristik kavramları ve insanlık ile teknolojinin kesişimini keşfetmek için bilimkurgu edebiyatına dalmak.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Contact -->
+    <section id="contact" class="space-y-8 pb-24 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">İletişime Geç</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-8 shadow-sm max-w-2xl">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="af661281-4488-41fc-975c-fa3d650c43f4">
+          
+          <div class="space-y-2">
+            <label for="name" class="block font-medium">İsim</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="İsminiz">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="email" class="block font-medium">E-posta</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="eposta@adresiniz.com">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="message" class="block font-medium">Mesaj</label>
+            <textarea id="message" name="message" required rows="5" class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow resize-none" placeholder="Nasıl işbirliği yapabiliriz?"></textarea>
+          </div>
+          
+          <!-- anti-spam honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-neutrals-900 transition-all">
+            Mesajı Gönder
+          </button>
+        </form>
+      </div>
+    </section>
+    
+  </main>
+</Layout>

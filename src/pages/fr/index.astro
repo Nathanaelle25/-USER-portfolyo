@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const projects = [
+  {
+    title: "Nathanaelle notlar",
+    description: "La prise de notes manque souvent de synchronisation cloud transparente et d'une interface intuitive pour une capture rapide. Ce projet résout les frictions de la journalisation quotidienne en fournissant une plateforme en temps réel et hautement réactive pour organiser efficacement les pensées et les tâches.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Theatro",
+    description: "L'allocation des places et la gestion des événements pour les ateliers de loisirs peuvent être très décousues et sujettes aux doubles réservations. Theatro résout ce problème en fournissant un système de réservation à architecture 3-tiers unifié qui garantit la cohérence des données et simplifie le processus de réservation pour les participants.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Smart Logistics Service",
+    description: "Les perturbations de la chaîne d'approvisionnement soulignent la nécessité de prévoir les retards avec précision. Ce service offre une optimisation des itinéraires et des prévisions de retard en temps réel, permettant aux gestionnaires de flotte de rediriger proactivement les expéditions et de minimiser les temps d'arrêt.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  }
+];
+
+const skills = {
+  "Frontend": ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Astro", "React"],
+  "Backend": ["Node.js", "Express", "ASP.NET Core"],
+  "Bases de Données": ["SQL Server", "MongoDB"],
+  "DevOps & Outils": ["Git", "Docker", "REST APIs"]
+};
+---
+
+<Layout title="Nathanaelle | Portfolio" description="Portfolio Personnel de Nathanaelle" lang="fr">
+  <Header />
+  <main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+    
+    <!-- 1. Hero -->
+    <section id="hero" class="min-h-[65vh] flex flex-col justify-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-neutrals-900 dark:text-neutrals-50 tracking-tight">
+        Bonjour, je suis <span class="text-primary-500">NATHANAELLE</span>.
+      </h1>
+      <div class="mt-6 text-xl text-neutrals-600 dark:text-neutrals-300 max-w-2xl font-sans space-y-4">
+        <p>
+          J'analyse les problèmes techniques complexes et conçois des solutions élégantes et performantes à partir de zéro.
+        </p>
+        <p>
+          Passionné par la création d'applications web robustes qui privilégient l'expérience utilisateur et l'architecture évolutive.
+        </p>
+      </div>
+      <div class="mt-8 flex gap-4">
+        <a href="#projects" class="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors">
+          Voir Mon Travail
+        </a>
+        <a href="#contact" class="px-6 py-3 bg-neutrals-200 dark:bg-neutrals-800 text-neutrals-900 dark:text-white rounded-lg font-semibold hover:bg-neutrals-300 dark:hover:bg-neutrals-700 transition-colors">
+          Me Contacter
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. Projects -->
+    <section id="projects" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Projets en Vedette</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <div class="flex flex-col bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold font-heading mb-3">{p.title}</h3>
+            <p class="text-neutrals-600 dark:text-neutrals-400 flex-grow mb-6">{p.description}</p>
+            <a href={p.link} target="_blank" rel="noopener noreferrer" class="self-start px-4 py-2 bg-neutrals-100 dark:bg-neutrals-800 hover:bg-neutrals-200 dark:hover:bg-neutrals-700 text-sm font-semibold rounded-md transition-colors">
+              Dépôt GitHub &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 3. Skills -->
+    <section id="skills" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Compétences & Technologies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {Object.entries(skills).map(([category, items]) => (
+          <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-6">
+            <h3 class="text-lg font-bold font-heading mb-4 text-primary-600 dark:text-primary-400">{category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {items.map((skill) => (
+                <span class="px-3 py-1 bg-white dark:bg-neutrals-800 border border-neutrals-200 dark:border-neutrals-700 rounded-md text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Experience -->
+    <section id="experience" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Expérience Professionnelle</h2>
+      <div class="space-y-6 border-l-2 border-primary-200 dark:border-primary-900 pl-6">
+        
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-500 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Participant Hackathon</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Avril 2026</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Collaboration intensive sur le Smart Logistics Service. Travail en étroite collaboration avec une équipe pour conceptualiser et implémenter une logique de prédictions de retards en temps réel et des algorithmes d'optimisation d'itinéraires dans des délais très stricts.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-400 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Développeur Indépendant</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Projets Autogérés</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Maîtrise des flux de travail full-stack en concevant et en développant des systèmes robustes comme 'Theatro' et 'Nathanaelle notlar'. Gestion de bout en bout, de la modélisation de base de données à la conception responsive du frontend.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-300 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Travaux Pratiques Académiques & Recherche Technique</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Université Bitlis Eren</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Recherches pratiques et implémentation de la conception logique numérique, des portes universelles (NAND/NOR) et des systèmes approfondis de gestion de bases de données, consolidant une compréhension rigoureuse des fondamentaux de l'informatique.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Education -->
+    <section id="education" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Éducation</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold font-heading">Université Bitlis Eren</h3>
+          <p class="text-neutrals-600 dark:text-neutrals-400 mt-1">Génie Informatique</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-primary-500 font-semibold bg-primary-50 dark:bg-primary-950/50 px-4 py-2 rounded-lg">
+          Diplôme Universitaire
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Hobbies -->
+    <section id="hobbies" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Loisirs & Intérêts</h2>
+      <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-8">
+        <ul class="space-y-4 text-neutrals-700 dark:text-neutrals-300 list-disc list-inside marker:text-primary-500">
+          <li><strong>Maîtrise des Langues :</strong> Pratique du français conversationnel et de la traduction en parallèle de l'anglais et du turc.</li>
+          <li><strong>Échecs :</strong> Jeu d'échecs pour aiguiser l'esprit analytique, la prévoyance stratégique en dehors du code.</li>
+          <li><strong>Science-Fiction :</strong> Lecture d'œuvres de science-fiction pour explorer les concepts futuristes et l'intersection entre l'humanité et la technologie.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Contact -->
+    <section id="contact" class="space-y-8 pb-24 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Me Contacter</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-8 shadow-sm max-w-2xl">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="af661281-4488-41fc-975c-fa3d650c43f4">
+          
+          <div class="space-y-2">
+            <label for="name" class="block font-medium">Nom</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="Votre Nom">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="email" class="block font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="votre@email.com">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="message" class="block font-medium">Message</label>
+            <textarea id="message" name="message" required rows="5" class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow resize-none" placeholder="Comment pouvons-nous collaborer ?"></textarea>
+          </div>
+          
+          <!-- anti-spam honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-neutrals-900 transition-all">
+            Envoyer le Message
+          </button>
+        </form>
+      </div>
+    </section>
+    
+  </main>
+</Layout>

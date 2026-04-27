@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const projects = [
+  {
+    title: "Nathanaelle notlar",
+    description: "Note-taking often lacks seamless cloud synchronization and an intuitive interface for rapid capture. This project addresses the friction of daily logging by providing a real-time, highly responsive platform to organize thoughts and tasks efficiently.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Theatro",
+    description: "Seat allocation and event management for hobby workshops can be highly disjointed and prone to double-booking. Theatro solves this by providing a unified, 3-tier architecture reservation system that guarantees data consistency and simplifies the booking process for attendees.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  },
+  {
+    title: "Smart Logistics Service",
+    description: "Supply chain disruptions highlight the need for accurate delay forecasting. This service provides route optimization and real-time delay predictions, enabling fleet managers to proactively reroute shipments and minimize downtime.",
+    link: "https://github.com/Nathanaelle25/-USER-portfolyo.git"
+  }
+];
+
+const skills = {
+  "Frontend": ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Astro", "React"],
+  "Backend": ["Node.js", "Express", "ASP.NET Core"],
+  "Databases": ["SQL Server", "MongoDB"],
+  "DevOps & Tools": ["Git", "Docker", "REST APIs"]
+};
+---
+
+<Layout title="Nathanaelle | Portfolio" description="Personal Portfolio of Nathanaelle" lang="en">
+  <Header />
+  <main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+    
+    <!-- 1. Hero -->
+    <section id="hero" class="min-h-[65vh] flex flex-col justify-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-neutrals-900 dark:text-neutrals-50 tracking-tight">
+        Hello, I'm <span class="text-primary-500">NATHANAELLE</span>.
+      </h1>
+      <div class="mt-6 text-xl text-neutrals-600 dark:text-neutrals-300 max-w-2xl font-sans space-y-4">
+        <p>
+          I analyze complex technical problems and design elegant, performant solutions from the ground up.
+        </p>
+        <p>
+          Passionate about building robust web applications that prioritize user experience and scalable architecture.
+        </p>
+      </div>
+      <div class="mt-8 flex gap-4">
+        <a href="#projects" class="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors">
+          View My Work
+        </a>
+        <a href="#contact" class="px-6 py-3 bg-neutrals-200 dark:bg-neutrals-800 text-neutrals-900 dark:text-white rounded-lg font-semibold hover:bg-neutrals-300 dark:hover:bg-neutrals-700 transition-colors">
+          Contact Me
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. Projects -->
+    <section id="projects" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Featured Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <div class="flex flex-col bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold font-heading mb-3">{p.title}</h3>
+            <p class="text-neutrals-600 dark:text-neutrals-400 flex-grow mb-6">{p.description}</p>
+            <a href={p.link} target="_blank" rel="noopener noreferrer" class="self-start px-4 py-2 bg-neutrals-100 dark:bg-neutrals-800 hover:bg-neutrals-200 dark:hover:bg-neutrals-700 text-sm font-semibold rounded-md transition-colors">
+              GitHub Repository &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 3. Skills -->
+    <section id="skills" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Skills & Technologies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {Object.entries(skills).map(([category, items]) => (
+          <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-6">
+            <h3 class="text-lg font-bold font-heading mb-4 text-primary-600 dark:text-primary-400">{category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {items.map((skill) => (
+                <span class="px-3 py-1 bg-white dark:bg-neutrals-800 border border-neutrals-200 dark:border-neutrals-700 rounded-md text-sm font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Experience -->
+    <section id="experience" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Professional Experience</h2>
+      <div class="space-y-6 border-l-2 border-primary-200 dark:border-primary-900 pl-6">
+        
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-500 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Hackathon Participant</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">April 2026</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Collaborated extensively on the Smart Logistics Service. Worked tightly with a team to conceptualize and implement logic for real-time delay predictions and route optimization algorithms under strict deadlines.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-400 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Independent Developer</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Self-Managed Projects</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Mastered full-stack workflows by architecting and developing robust systems like 'Theatro' (a comprehensive hobby workshop reservation system) and 'Nathanaelle notlar'. Successfully handled aspects ranging from database modeling to responsive frontend design.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 bg-primary-300 rounded-full border-4 border-neutrals-50 dark:border-neutrals-950"></div>
+          <h3 class="text-xl font-bold font-heading">Academic Lab Work & Technical Research</h3>
+          <p class="text-sm font-medium text-primary-500 mb-2">Bitlis Eren University</p>
+          <p class="text-neutrals-600 dark:text-neutrals-400">
+            Led hands-on research and practical implementation of digital logic design, universal gates (NAND/NOR), and deep database management systems, solidifying a rigorous understanding of computer science fundamentals.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Education -->
+    <section id="education" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Education</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold font-heading">Bitlis Eren University</h3>
+          <p class="text-neutrals-600 dark:text-neutrals-400 mt-1">Computer Engineering</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-primary-500 font-semibold bg-primary-50 dark:bg-primary-950/50 px-4 py-2 rounded-lg">
+          Degree Program
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Hobbies -->
+    <section id="hobbies" class="space-y-8 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Hobbies & Interests</h2>
+      <div class="bg-neutrals-100 dark:bg-neutrals-900/50 rounded-2xl p-8">
+        <ul class="space-y-4 text-neutrals-700 dark:text-neutrals-300 list-disc list-inside marker:text-primary-500">
+          <li><strong>Language Mastery:</strong> Practicing conversational French and Turkish alongside English, exploring translation and cultural communication nuances.</li>
+          <li><strong>Strategic Chess:</strong> Playing chess to sharpen analytical thinking, strategic foresight, and problem-solving outside of code.</li>
+          <li><strong>Reading Sci-Fi:</strong> Diving into science fiction literature to explore futuristic concepts and the intersection of humanity and technology.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Contact -->
+    <section id="contact" class="space-y-8 pb-24 scroll-mt-24">
+      <h2 class="text-3xl font-heading font-bold">Get In Touch</h2>
+      <div class="bg-white dark:bg-neutrals-900 border border-neutrals-200 dark:border-neutrals-800 rounded-2xl p-8 shadow-sm max-w-2xl">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="af661281-4488-41fc-975c-fa3d650c43f4">
+          
+          <div class="space-y-2">
+            <label for="name" class="block font-medium">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="Your Name">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="email" class="block font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow" placeholder="your@email.com">
+          </div>
+          
+          <div class="space-y-2">
+            <label for="message" class="block font-medium">Message</label>
+            <textarea id="message" name="message" required rows="5" class="w-full px-4 py-2 rounded-lg border border-neutrals-300 dark:border-neutrals-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow resize-none" placeholder="How can we collaborate?"></textarea>
+          </div>
+          
+          <!-- Web3Forms anti-spam honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-neutrals-900 transition-all">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+    
+  </main>
+</Layout>
